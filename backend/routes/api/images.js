@@ -6,8 +6,8 @@ const { singleMulterUpload, singlePublicFileUpload } = require('../../awsS3')
 const db = require("../../db/models")
 
 router.get('/', asyncHandler(async(req, res, next)=>{
-
-    const images = await db.Image.findAll({});
+    // console.log("why is it in get route?")
+    const images = await db.Image.findAll();
 
     res.json({images})
 }))
@@ -30,6 +30,16 @@ router.put('/editimage/:id', asyncHandler(async(req, res) => {
     const editImage = await db.Image.findByPk(imageId)
     await editImage.update({ title, content })
     res.json(editImage)
+}))
+
+router.delete('/:id', asyncHandler(async(req, res) => {
+    console.log("this is inside of the router")
+    const imageId = req.params.id
+    const deleteImage = await db.Image.findByPk(imageId)
+    if (deleteImage !== undefined) {
+        await deleteImage.destroy()
+    }
+    res.json({ message: "successfully deleted" })
 }))
 
 

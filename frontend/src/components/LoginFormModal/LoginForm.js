@@ -44,6 +44,7 @@ function LoginForm() {
           required
       />
       <button type="submit" className="login-button">Log In</button>
+      <button type="submit" className="demo-btn">Demo User</button>
     </form>
   );
 }

@@ -8,13 +8,16 @@ import HomePage from "./components/HomePage/HomePage";
 import ImageBrowser from "./components/ShowImages";
 import CreateImage from "./components/CreateImage/index";
 import UpdateImage from "./components/UpdateImage";
+import { getImages } from "./store/images";
 
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser())
+    .then(() => dispatch((getImages())))
+    .then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return (

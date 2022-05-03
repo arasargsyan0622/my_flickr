@@ -3,10 +3,11 @@
     justify-content: flex-end;
 }
 
-ul {
+.nav-ul {
     display: flex;
 }
 
 li {
     list-style: none;
+    margin-right: 1rem;
 }
