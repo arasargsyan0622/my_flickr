@@ -23,5 +23,12 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     res.json(image)
 }));
 
+router.put('/editimage/:id', asyncHandler(async(req, res) => {
+    const { title, content, userId } = req.body
+    const editImage = await db.Image.findByPk(imageId)
+    await editImage.update({ title, content })
+    res.json(editImage)
+}))
+
 
 module.exports = router
