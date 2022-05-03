@@ -16,9 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    albumId: {
-      type: DataTypes.INTEGER,
-    }
+
   }, {});
   Image.associate = function(models) {
     // associations can be defined here
