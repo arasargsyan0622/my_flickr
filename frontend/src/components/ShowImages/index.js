@@ -6,13 +6,13 @@ import { getImages }  from"../../store/images";
 
 const ImageBrowser = ()=>{
     const dispatch = useDispatch()
-    // const user = useSelector(state => state.session.user);
+    const user = useSelector(state => state.session.user);
     const images = Object.values(useSelector(state => state.images));
 
     useEffect(() => {
         dispatch(getImages())
     }, [dispatch])
-    // console.log("images --------", images )
+    console.log("images --------", images )
 
     if(!images){
         return null

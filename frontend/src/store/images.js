@@ -55,8 +55,8 @@ export const postImage = (data) => async dispatch =>{
 }
 
 export const imageUpdate = data => async dispatch => {
-    console.log("data-------------", data)
-    const response = await csrfFetch(`/api/images/editimage/${data.image.id}`, {
+    // console.log("data-------------", data)
+    const response = await csrfFetch(`/api/images/editimage/${data.imageId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -65,8 +65,8 @@ export const imageUpdate = data => async dispatch => {
     if(response.ok) {
         const updateImage = await response.json()
         dispatch(editImage(updateImage))
-        return updateImage
     }
+    return response
 }
 
 const initialState = {}

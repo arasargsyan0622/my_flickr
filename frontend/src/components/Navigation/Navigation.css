@@ -1,0 +1,12 @@
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}

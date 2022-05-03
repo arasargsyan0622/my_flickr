@@ -17,13 +17,15 @@ function CreateImage(){
         const data = {image, content , userId, title}
         await dispatch(postImage(data))
         history.push("/images")
+        setContent("")
+        setTitle("")
+        setImage()
     }
 
     const selected = event => {
         const image = event.target.files[0]
         setImage(image)
     }
-
 
 
     return (
