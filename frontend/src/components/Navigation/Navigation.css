@@ -1,0 +1,13 @@
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    margin-right: 1rem;
+}

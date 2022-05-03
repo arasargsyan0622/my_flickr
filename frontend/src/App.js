@@ -7,14 +7,17 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage/HomePage";
 import ImageBrowser from "./components/ShowImages";
 import CreateImage from "./components/CreateImage/index";
-
+import UpdateImage from "./components/UpdateImage";
+import { getImages } from "./store/images";
 
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser())
+    .then(() => dispatch((getImages())))
+    .then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return (
@@ -27,6 +30,9 @@ function App() {
           </Route>
           <Route path="/images">
             <ImageBrowser />
+          </Route>
+          <Route path="/editimage/:imageId">
+            <UpdateImage />
           </Route>
           <Route path="/add">
             <CreateImage/>

@@ -85,7 +85,6 @@ function SignupFormPage() {
         </div>
         <div className="signup-btns">
           <button type="submit" className="submit-btn">Welcome</button>
-          <button type="submit" className="demo-btn">Demo User</button>
         </div>
       </form>
     </div>
