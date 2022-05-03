@@ -21,7 +21,7 @@ export const addImage = image => {
 
 export const getImages = () => async dispatch => {
     const response = await csrfFetch('/api/images')
-    console.log("wuefhweghfuiwe ====" , response)
+    // console.log("wuefhweghfuiwe ====" , response)
     if(response.ok) {
         const images = await response.json()
         dispatch(loadImages(images))

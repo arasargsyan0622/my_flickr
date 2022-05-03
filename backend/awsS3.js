@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 // name of your bucket here
-const NAME_OF_BUCKET = process.env.AWS_BUCKET_NAME;
+const NAME_OF_BUCKET = "spickr"
 
 const multer = require("multer");
 

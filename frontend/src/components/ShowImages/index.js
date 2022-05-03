@@ -12,10 +12,11 @@ const ImageBrowser = ()=>{
     useEffect(() => {
         dispatch(getImages())
     }, [dispatch])
-    console.log("images --------", images )
-    // if(!images){
-    //     return null
-    // }
+    // console.log("images --------", images )
+
+    if(!images){
+        return null
+    }
 
     return (
         <div>

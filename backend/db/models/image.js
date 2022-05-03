@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-
+  },
   }, {});
   Image.associate = function(models) {
     // associations can be defined here
+    Image.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return Image;
 };

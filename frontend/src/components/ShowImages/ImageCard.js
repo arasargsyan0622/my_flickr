@@ -1,4 +1,5 @@
 import { useDispatch, useSelector }from "react-redux"
+import "./images.css"
 
 function ImageCard({image}) {
     const dispatch = useDispatch()
@@ -7,8 +8,7 @@ function ImageCard({image}) {
     return(
         <div>
             <h1>{image.title}</h1>
-            <div>{image.userId}</div>
-            <div>{image.id}</div>
+            <img src={`${image.imageUrl}`} alt="" className="images"></img>
         </div>
     )
 }
