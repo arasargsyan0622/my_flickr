@@ -4,6 +4,11 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import HomePage from "./components/HomePage/HomePage";
+import ImageBrowser from "./components/ShowImages";
+import CreateImage from "./components/CreateImage/index";
+
+
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +22,15 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
+          <Route path="/images">
+            <ImageBrowser />
+          </Route>
+          <Route path="/add">
+            <CreateImage/>
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
