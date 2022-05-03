@@ -17,13 +17,15 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     // console.log("fjuwerfhuerheru", req.body)
     const imageUrl = await singlePublicFileUpload(req.file);
     const newImage = { title, imageUrl, content, userId }
-    console.log("this is new image ===============", newImage)
+    // console.log("this is new image ===============", newImage)
     const image = await db.Image.build(newImage)
     await image.save();
     res.json(image)
 }));
 
 router.put('/editimage/:id', asyncHandler(async(req, res) => {
+    // console.log("hell from put route")
+    const imageId = req.params.id
     const { title, content, userId } = req.body
     const editImage = await db.Image.findByPk(imageId)
     await editImage.update({ title, content })
