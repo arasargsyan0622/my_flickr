@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/arasargsyan0622/my_flickr/issues"
   },
-  "homepage": "https://github.com/arasargsyan0622/my_flickr#readme"
+  "homepage": "https://github.com/arasargsyan0622/my_flickr#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1"
+  }
 }
