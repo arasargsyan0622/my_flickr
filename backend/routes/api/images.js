@@ -80,7 +80,7 @@ router.post("/image/:id/comment", asyncHandler(async(req, res) => {
     await newComment.save();
     const comments = await db.Comment.findAll({
       where: { imageId },
-      include: User
+      include: db.User
     });
     return res.json(comments);
 }));
@@ -112,7 +112,7 @@ router.delete('/image/:imageId/comment/:commentId/delete', asyncHandler(async(re
     where: {
       imageId
     },
-    include: User
+    include: dbUser
   });
 
   return res.json(comments)

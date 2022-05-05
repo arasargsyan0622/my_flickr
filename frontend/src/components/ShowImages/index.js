@@ -2,7 +2,6 @@ import ImageCard from "./ImageCard";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { getImages }  from"../../store/images";
-import { Link } from 'react-router-dom';
 
 
 
