@@ -44,6 +44,17 @@ export const getImages = () => async dispatch => {
     }
 }
 
+export const getUserImages = (userId) => async(dispatch) => {
+  const response = await fetch(`/api/images/${userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+  const images = await response.json();
+  dispatch(loadImages(images, userId))
+}
+
 export const postImage = (data) => async dispatch =>{
     const formData = new FormData();
     formData.append("image", data.image)
