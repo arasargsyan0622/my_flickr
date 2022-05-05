@@ -12,6 +12,16 @@ router.get('/', asyncHandler(async(req, res, next)=>{
     res.json({images})
 }))
 
+router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+
+  const image = await db.Image.findAll({
+      where: { userId },
+      include: User
+  })
+  return res.json({ image })
+}));
+
 router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     const { title, content, userId } = req.body
     // console.log("fjuwerfhuerheru", req.body)
@@ -23,7 +33,7 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     res.json(image)
 }));
 
-router.put('/editimage/:id', asyncHandler(async(req, res) => {
+router.put('/editimage/', asyncHandler(async(req, res) => {
     // console.log("hell from put route")
     const imageId = req.params.id
     const { title, content, userId } = req.body
@@ -42,5 +52,62 @@ router.delete('/:id', asyncHandler(async(req, res) => {
     res.json({ message: "successfully deleted" })
 }))
 
+
+
+
+router.get('/image/:id/comments', asyncHandler(async(req, res, next)=>{
+    const imageId = parseInt(req.params.id, 10)
+    const comments = await db.Comment.findAll({
+        where: {
+            imageId,
+        }
+    });
+
+    res.json({ comments })
+}))
+
+router.post("/image/:id/comment", asyncHandler(async(req, res) => {
+  const { userId, imageId, comment } = req.body;
+  const newComment = await db.Comment.build({ userId, imageId, comment });
+    await newComment.save();
+    const comments = await db.Comment.findAll({
+      where: { imageId },
+      include: User
+    });
+    return res.json(comments);
+}));
+
+
+router.put('/image/:imageId/comment/:commentId/edit', asyncHandler(async(req, res) => {
+  const imageId = parseInt(req.params.imageId, 10);
+  const commentId = parseInt(req.params.commentId, 10);
+
+  const prevComment = await db.Comment.findByPk(commentId);
+  await prevComment.update(req.body);
+  const comments = await db.Comment.findAll({
+    where: {
+      imageId
+    }
+  })
+  return res.json(comments);
+
+}))
+
+router.delete('/image/:imageId/comment/:commentId/delete', asyncHandler(async(req, res) => {
+  const imageId = parseInt(req.params.imageId, 10);
+  const commentId = parseInt(req.params.commentId, 10);
+
+  const comment = await db.Comment.findByPk(commentId);
+  await comment.destroy();
+
+  const comments = await db.Comment.findAll({
+    where: {
+      imageId
+    },
+    include: User
+  });
+
+  return res.json(comments)
+}))
 
 module.exports = router

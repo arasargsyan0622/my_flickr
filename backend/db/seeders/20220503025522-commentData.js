@@ -9,7 +9,7 @@ module.exports = {
     */
       return queryInterface.bulkInsert('Comments', [
         {
-          content: "Abosuletely mindblowing",
+          comment: "Abosuletely mindblowing",
           userId: 1,
           imageId: 1,
         }
