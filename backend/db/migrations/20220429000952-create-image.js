@@ -13,10 +13,10 @@ module.exports = {
         allowNull: false,
       },
       content: {
-        type: Sequelize.TEXT(255),
+        type: Sequelize.TEXT,
       },
       imageUrl: {
-        type: Sequelize.TEXT(255),
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       userId: {

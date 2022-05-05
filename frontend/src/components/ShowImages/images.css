@@ -2,3 +2,25 @@
     height: 500px;
     width: auto;
 }
+
+.found-you,
+.images-container
+{
+    width: fit-content;
+}
+
+.images-container {
+    color: black;
+}
+
+.images-container:hover {
+    color: red
+}
+
+.image-title {
+    text-decoration: none;
+}
+
+.image-container {
+    width: 500px
+}

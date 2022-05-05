@@ -9,7 +9,7 @@ import ImageBrowser from "./components/ShowImages";
 import CreateImage from "./components/CreateImage/index";
 import UpdateImage from "./components/UpdateImage";
 import Slider from "./components/SplashPahe";
-
+import SingleImagePage from "./components/SingleImage/Image";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,11 +26,14 @@ function App() {
           <Route path="/" exact>
             <Slider />
           </Route>
-          <Route path="/images">
+          <Route path="/images" exact>
             <ImageBrowser />
           </Route>
           <Route path="/editimage/:imageId">
             <UpdateImage />
+          </Route>
+          <Route path="/images/:id">
+            <SingleImagePage />
           </Route>
           <Route path="/add">
             <CreateImage/>

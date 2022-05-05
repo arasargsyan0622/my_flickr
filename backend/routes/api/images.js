@@ -22,6 +22,14 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   return res.json({ image })
 }));
 
+router.get('/image/:id', asyncHandler(async(req, res) => {
+
+  const id = parseInt(req.params.id, 10);
+
+  const image = await db.Image.findByPk(id, {include: User})
+  return res.json({ image })
+}))
+
 router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     const { title, content, userId } = req.body
     // console.log("fjuwerfhuerheru", req.body)

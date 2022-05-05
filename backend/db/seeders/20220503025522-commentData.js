@@ -12,7 +12,17 @@ module.exports = {
           comment: "Abosuletely mindblowing",
           userId: 1,
           imageId: 1,
-        }
+        },
+        {
+          comment: "That looks great",
+          userId: 1,
+          imageId: 3,
+        },
+        {
+          comment: "I'd love to see it irl",
+          userId: 2,
+          imageId: 3,
+        },
       ], {});
   },
 

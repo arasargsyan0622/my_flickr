@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { images } from "../../../public/images/images";
+import { images } from "../images";
 import "./slide.css"
 
 const Slider = () => {
@@ -39,7 +39,7 @@ const Slider = () => {
           >
             {index === currentSlide && (
               <div>
-                <img src={image.image} alt="image" className="image" />
+                <img src={image.image} alt="" className="splash-image" />
               </div>
             )}
           </div>

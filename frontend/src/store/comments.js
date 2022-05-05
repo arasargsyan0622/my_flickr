@@ -1,27 +1,37 @@
 import { csrfFetch } from "./csrf";
+import rfdc from 'rfdc'
+const clone = rfdc()
 
-const LOAD_COMMENTS = 'users/LOAD_COMMENTS'
-const ADD_COMMENT = 'users/ADD_COMMENT'
-const EDIT_COMMENT = 'users/EDIT_COMMENT'
+const LOAD_COMMENTS = 'comments/LOAD_COMMENTS'
+const ADD_COMMENT = 'comments/ADD_COMMENT'
+const EDIT_COMMENT = 'comments/EDIT_COMMENT'
+const DELETE_COMMENT = 'comments/DELETE_COMMENT'
 
 export const loadComments = comment => {
     return {
         type: LOAD_COMMENTS,
-        payload: comment
+        comment
     }
 }
 
 export const addComment = comment => {
     return {
         type: ADD_COMMENT,
-        payload: comment
+        comment
     }
 }
 
 export const editComment = comment => {
     return {
         type: EDIT_COMMENT,
-        payload: comment
+        comment
+    }
+}
+
+export const commentDelete = comment => {
+    return {
+        type: DELETE_COMMENT,
+        comment
     }
 }
 
@@ -50,11 +60,11 @@ export const createComment = newComment => async dispatch => {
     }
 }
 
-export const updateComment = (payload, commentId, imageId) => async dispatch => {
+export const updateComment = (data, commentId, imageId) => async dispatch => {
     const response = await csrfFetch(`api/images/image/${imageId}/comment/${commentId}/edit`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data),
     })
 
     const comment = await response.json()
@@ -63,36 +73,40 @@ export const updateComment = (payload, commentId, imageId) => async dispatch => 
 }
 
 export const deleteComment = (imageId, commentId) => async dispatch => {
-  const res = await csrfFetch(`/api/images/image/${imageId}/comment/${commentId}/delete`, {
+  const response = await csrfFetch(`/api/images/image/${imageId}/comment/${commentId}/delete`, {
     method: 'DELETE'
   });
 
-  if(res.ok) {
-    const data = await res.json();
-    dispatch(getComments(data));
-    return res;
+  if(response.ok) {
+    const data = await response.json();
+    dispatch(commentDelete(data));
   }
+    return response;
 }
 
 const initialState = {}
 
 const commentReducer = (state = initialState, action) => {
-    let newState
+    const newState = clone(state)
     switch(action.type) {
         case LOAD_COMMENTS:
-            newState = Object.assign({}, state);
-            newState.comments = action.payload;
+            const comments = action.comments
+            comments.comments.forEach(comment => {
+                newState[comment.id] = comment
+            })
             return newState;
         case ADD_COMMENT:
-            newState = Object.assign({}, state);
-            newState.comments = action.payload;
+            newState[action.comment.id] = action.comment
             return newState;
         case EDIT_COMMENT:
-            newState = Object.assign({}, state);
-            newState.comments = action.payload;
+            delete(newState[action.comment.id])
+            newState[action.comment.id] = action.comment
             return newState;
+        case DELETE_COMMENT:
+            delete(newState[action.id])
+            return newState
         default:
-        return newState
+            return newState
     }
 
 }

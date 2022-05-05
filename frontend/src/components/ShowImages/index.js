@@ -2,6 +2,8 @@ import ImageCard from "./ImageCard";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { getImages }  from"../../store/images";
+import { Link } from 'react-router-dom';
+
 
 
 const ImageBrowser = ()=>{
@@ -20,11 +22,12 @@ const ImageBrowser = ()=>{
     }
 
     return (
-        <div>
+        <div className="found-you">
             {images && images.map((image)=>{
+                    console.log("image in index ", image)
                 return(
                     <ImageCard image={image}></ImageCard>
-                    )
+                )
                 })
             }
         </div>

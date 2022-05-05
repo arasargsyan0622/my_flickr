@@ -19,9 +19,9 @@ function ImageCard({image}) {
 
     return(
         <div className="images-container">
-            <h1>{image.title}</h1>
+            <h2 className="image-title">{image.title}</h2>
             <h3>{image.content}</h3>
-            <img src={`${image.imageUrl}`} alt="" className="images"></img>
+            <Link to={`/images/${image.id}`}><img src={`${image.imageUrl}`} alt="" className="images"></img></Link>
             { (user.id === image.userId) ? <Link to={`/editimage/${image.id}`}><button>Edit</button></Link> : <div></div> }
             { (user.id === image.userId) ? <button onClick={deleteImage}>Delete</button> : <div></div> }
         </div>
