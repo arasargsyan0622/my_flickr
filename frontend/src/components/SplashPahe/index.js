@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { images } from "../images";
+import { images } from "../../../public/images/images";
 import "./slide.css"
 
 const Slider = () => {
@@ -12,12 +12,6 @@ const Slider = () => {
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-    console.log("next");
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
-    console.log("prev");
   };
 
   function auto() {
@@ -45,7 +39,7 @@ const Slider = () => {
           >
             {index === currentSlide && (
               <div>
-                <img src={image.image} alt="image" className="splash-image" />
+                <img src={image.image} alt="image" className="image" />
               </div>
             )}
           </div>

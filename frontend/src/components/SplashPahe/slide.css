@@ -50,30 +50,6 @@
   transition: all 0.5s ease;
 }
 
-.arrow {
-  border: 2px solid white;
-  background-color: transparent;
-  color: #fff;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 999;
-}
-.arrow:hover {
-  background-color: #fff;
-  color: #777;
-}
-
-.next {
-  top: 35%;
-  right: 1.5rem;
-}
-.prev {
-  top: 35%;
-  left: 1.5rem;
-}
 
 .splash-image {
     width: 1000px;
