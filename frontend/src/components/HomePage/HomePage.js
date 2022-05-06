@@ -1,7 +1,8 @@
 import React from "react"
 import { useSelector } from "react-redux";
+import Navigation from "../Navigation";
 import ImageBrowser from "../ShowImages";
-// import SplashPage from "../SplashPage";
+import SplashPage from "../SplashPage";
 import Slider from "../SplashPahe";
 
 
@@ -11,7 +12,8 @@ const HomePage = () => {
   if (!session) {
     return (
       <>
-        <Slider />
+        <SplashPage />
+        <Navigation />
       </>
     );
   } else {

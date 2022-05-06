@@ -1,0 +1,115 @@
+.splash-page-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(26, 26, 26, 1);
+  z-index: 100;
+}
+.splash-page-text-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-page-text-container > h1 {
+  z-index: 10;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.splash-page-text-container > p {
+  z-index: 10;
+  color: white;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.slideshow,
+.slideshow:after {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 0;
+}
+
+.slideshow li {
+  width: 100%;
+}
+
+.slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  opacity: 0;
+  z-index: -1;
+  animation: imageAnimation 12s linear infinite 0s;
+}
+
+.slideshow li:nth-child(1) span {
+  background-image: url(../../../public/images/607694main_Kepler22bArtwork_full.jpg);
+  animation-delay: 0s;
+}
+.slideshow li:nth-child(2) span {
+  background-image: url(../../../public/images/697015main_pia16211_full.jpg);
+  animation-delay: 10s;
+}
+.slideshow li:nth-child(3) span {
+  background-image: url(../../../public/images/archives_raquarii.jpg);
+  animation-delay: 20s;
+}
+.slideshow li:nth-child(4) span {
+  background-image: url(../../../public/images/aurora_trails4.jpg);
+  animation-delay: 30s;
+}
+
+.slideshow li:nth-child(2) div {
+  animation-delay: 5s;
+}
+.slideshow li:nth-child(3) div {
+  animation-delay: 10s;
+}
+.slideshow li:nth-child(4) div {
+  animation-delay: 15s;
+}
+.slideshow li:nth-child(5) div {
+  animation-delay: 20s;
+}
+.slideshow li:nth-child(6) div {
+  animation-delay: 25s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    animation-timing-function: ease-in;
+  }
+  25% {
+    animation-timing-function: ease-out;
+  }
+  50% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
