@@ -104,7 +104,7 @@ router.put('/image/:imageId/comment/:commentId/edit', asyncHandler(async(req, re
 
 router.delete('/image/:imageId/comment/:commentId/delete', asyncHandler(async(req, res) => {
   const imageId = parseInt(req.params.imageId, 10);
-  const commentId = parseInt(req.params.commentId, 10);
+  const commentId = parseInt(req.params.commentId, 10); 
 
   const comment = await db.Comment.findByPk(commentId);
   await comment.destroy();

@@ -22,7 +22,7 @@ const SingleImagePage = () => {
   const images = Object.values(useSelector((state) => state.images));
 
   const comments =  Object.values(useSelector((state) => state.comments))
-  // console.log("comments", comments)
+  console.log("comments", comments)
   const myImage = images.filter(image => {return image.id === +imageId})[0]
   // console.log("myImage", myImage)
 
@@ -51,14 +51,16 @@ const SingleImagePage = () => {
     }
     await dispatch(createComment(addComment))
       .then(setNewComment(''))
+      .then(() => dispatch(getComments(imageId)))
   }
 
   /* delete a comment */
 
-  const removeComment = async(e) => {
+  const removeComment = async(e, commentId) => {
     e.preventDefault();
-
-    await dispatch(deleteComment(myImage.id, e.target.id))
+    // console.log("this is value id", e.target.value.id)
+    await dispatch(deleteComment(myImage.id, commentId))
+      .then(() => dispatch(getComments(imageId)))
   }
 
 
@@ -77,7 +79,7 @@ const SingleImagePage = () => {
             <div className="comments-container">
               <h3>{comment.comment}</h3>
               {comment.userId === user?.id && (
-                <button className="delete-button" id={comment.id} onClick={removeComment}>Delete</button>
+                <button className="delete-button" onClick={(e) => removeComment(e, comment.id)}>Delete</button>
               )}
             </div>
           )

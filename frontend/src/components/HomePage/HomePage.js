@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import ImageBrowser from "../ShowImages";
-import SplashPage from "../SplashPage";
+// import SplashPage from "../SplashPage";
 import Slider from "../SplashPahe";
 
 
