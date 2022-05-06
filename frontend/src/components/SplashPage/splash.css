@@ -1,0 +1,131 @@
+.splash-page-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  /* z-index: 100; */
+}
+.splash-page-text-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-page-text-container > h1, .splash-btn {
+  z-index: 10;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.splash-btn {
+  background-color: white;
+  color: black;
+  font-size: x-large;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.slide,
+.slide:after {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  /* z-index: 0; */
+}
+
+.slide li {
+  width: 100%;
+}
+
+.slide li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  opacity: 0;
+  z-index: -1;
+  animation: imageAnimation 5s linear infinite 0s
+}
+
+.slide li:nth-child(1) span {
+  background-image: url(../../../public/images/607694main_Kepler22bArtwork_full.jpg);
+  animation-delay: 0s;
+}
+.slide li:nth-child(2) span {
+  background-image: url(../../../public/images/697015main_pia16211_full.jpg);
+  animation-delay: 5s;
+}
+.slide li:nth-child(3) span {
+  background-image: url(../../../public/images/archives_raquarii.jpg);
+  animation-delay: 10s;
+}
+.slide li:nth-child(4) span {
+  background-image: url(../../../public/images/aurora_trails4.jpg);
+  animation-delay: 15s;
+}
+.slide li:nth-child(5) span {
+  background-image: url(../../../public/images/hubble_gnz7q_illustration.png);
+  animation-delay: 20s;
+}
+.slide li:nth-child(6) span {
+  background-image: url(../../../public/images/hubble_lightsaber_image2.jpg);
+  animation-delay: 25s;
+}
+.slide li:nth-child(7) span {
+  background-image: url(../../../public/images/iss065e214281.jpg);
+  animation-delay: 30s;
+}
+.slide li:nth-child(8) span {
+  background-image: url(../../../public/images/pia19836-ngc2174.jpg);
+  animation-delay: 35s;
+}
+.slide li:nth-child(9) span {
+  background-image: url(../../../public/images/pia24870.jpeg);
+  animation-delay: 40s;
+}
+.slide li:nth-child(10) span {
+  background-image: url(../../../public/images/potw2137b.jpg);
+  animation-delay: 45s;
+}
+.slide li:nth-child(11) span {
+  background-image: url(../../../public/images/tde-launched-jet-nrao-artist-home_0.jpg);
+  animation-delay: 50s;
+}
+.slide li:nth-child(12) span {
+  background-image: url(../../../public/images/wff-2021-017-006.jpg);
+  animation-delay: 55s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

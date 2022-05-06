@@ -18,13 +18,15 @@ function ImageCard({image}) {
     }
 
     return(
-        <div className="images-container">
+        <>
             <h2 className="image-title">{image.title}</h2>
-            <h3>{image.content}</h3>
-            <Link to={`/images/${image.id}`}><img src={`${image.imageUrl}`} alt="" className="images"></img></Link>
-            { (user.id === image.userId) ? <Link to={`/editimage/${image.id}`}><button>Edit</button></Link> : <div></div> }
-            { (user.id === image.userId) ? <button onClick={deleteImage}>Delete</button> : <div></div> }
-        </div>
+            <Link to={`/images/${image.id}`}><img src={`${image.imageUrl}`} alt="" className="single-image"></img></Link>
+            <p className="image-content">{image.content}</p>
+            <div className="image-btns">
+                { (user.id === image.userId) ? <Link to={`/editimage/${image.id}`}><button className="edit-btn">Edit</button></Link> : <div></div> }
+                { (user.id === image.userId) ? <button className="delete-btn" onClick={deleteImage}>Delete</button> : <div></div> }
+            </div>
+         </>
     )
 }
 

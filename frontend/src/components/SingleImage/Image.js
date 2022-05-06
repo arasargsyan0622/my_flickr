@@ -26,8 +26,9 @@ const SingleImagePage = () => {
   const myImage = images.filter(image => {return image.id === +imageId})[0]
   // console.log("myImage", myImage)
 
-  const [newComment, setNewComment] = useState('');
-  const [edit, setEdit] = useState('')
+  const [ newComment, setNewComment ] = useState('');
+  const [ errors, setErrors ] = useState([]);
+  // const [edit, setEdit] = useState('')
 
   /* show comments*/
 
@@ -52,6 +53,15 @@ const SingleImagePage = () => {
     await dispatch(createComment(addComment))
       .then(setNewComment(''))
       .then(() => dispatch(getComments(imageId)))
+      .catch(
+        async err => {
+          const error = await err.json();
+          if(error && error.errors) {
+            setErrors(error.errors);
+          }
+        }
+
+      )
   }
 
   /* delete a comment */
@@ -70,7 +80,12 @@ const SingleImagePage = () => {
         <img src={myImage?.imageUrl} className="single-image" alt=""></img>
 
         <form onSubmit={postComment}>
-          <input className="comment-input" value={newComment} onChange={(e) => setNewComment(e.target.value)} required></input>
+          <ul>
+              {errors.map((error, idx) => (
+                <li key={idx}>{error}</li>
+              ))}
+          </ul>
+          <input className="comment-input" value={newComment} onChange={(e) => setNewComment(e.target.value)}></input>
           <button className="comment-button" type="submit">Comment</button>
         </form>
 

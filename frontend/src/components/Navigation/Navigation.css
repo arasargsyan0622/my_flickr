@@ -1,13 +1,54 @@
 .btn-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: black;
 }
 
-.nav-ul {
-    display: flex;
+.nav-home,
+.nav-add,
+.nav-explore {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.home-btn.active {
+    margin-right: 10px;
+}
+
+.home-btn.active,
+.add-btn,
+.explore-btn {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.fas-container {
+    background-color: white;
+}
+
+.fas-container:hover {
+    background-color: #5f1f85;
+    color:white
 }
 
 li {
     list-style: none;
-    margin-right: 1rem;
+}
+
+.logout-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.logout-btn:hover {
+    color: #9a4cc7;
+    font-weight:bold;
+}
+
+.username,
+.email {
+    color: #9a4cc7;
 }

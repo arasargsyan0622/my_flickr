@@ -90,11 +90,12 @@ export const postImage = (data) => async dispatch =>{
     if(response.ok){
         const newImage = await response.json();
         dispatch(addImage(newImage))
+        return newImage
     }
 }
 
 export const imageUpdate = data => async dispatch => {
-    // console.log("data-------------", data)
+    // console.log("this is thunk")
     const response = await csrfFetch(`/api/images/editimage/${data.imageId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -104,8 +105,8 @@ export const imageUpdate = data => async dispatch => {
     if(response.ok) {
         const updateImage = await response.json()
         dispatch(editImage(updateImage))
+        return updateImage
     }
-    return response
 }
 
 export const imageDelete = id => async dispatch => {

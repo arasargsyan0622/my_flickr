@@ -34,7 +34,7 @@ const Slider = () => {
       {images.map((image, index) => {
         return (
           <div
-            className={index === currentSlide ? "image current" : "image"}
+            className={index === currentSlide ? "image-current" : "image"}
             key={index}
           >
             {index === currentSlide && (

@@ -24,18 +24,16 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='btn-container'>
-      <ul className='nav-ul'>
-        <li>
-          <NavLink exact to="/" className="home-btn">Home</NavLink>
-          {isLoaded && sessionLinks}
-        </li>
-        <li>
+        <div className='nav-home'>
+            <NavLink exact to="/" className="home-btn">Home</NavLink>
+            {isLoaded && sessionLinks}
+        </div>
+        <div className='nav-add'>
           <NavLink to="/add" className="add-btn">Upload</NavLink>
-        </li>
-        <li>
+        </div>
+        <div className='nav-explore'>
           <NavLink to="/images" className="add-btn">Explore</NavLink>
-        </li>
-      </ul>
+        </div>
     </div>
   );
 }
