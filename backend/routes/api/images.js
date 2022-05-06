@@ -8,17 +8,14 @@ const { check } = require('express-validator');
 
 const db = require("../../db/models")
 
-// const validateImage = [
-//   check('title')
-//     .exists({ checkFalsy: true })
-//     .withMessage('Please provide a valid title.')
-//     .isLength({ min: 1, max: 100})
-//     .withMessage('Title must be between 1 and 100 characters.'),
-  // check('imageUrl')
-  //   .exists({ checkFalsy: true })
-  //   .withMessage('Please provide a valid image URL.'),
-//   handleValidationErrors
-// ];
+const validateImage = [
+  check('title')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a valid title.')
+    .isLength({ min: 1, max: 100})
+    .withMessage('Title must be between 1 and 100 characters.'),
+  handleValidationErrors
+];
 
 
 router.get('/', asyncHandler(async(req, res, next)=>{
@@ -46,7 +43,7 @@ router.get('/image/:id', asyncHandler(async(req, res) => {
   return res.json({ image })
 }))
 
-router.post('/', /* validateImage, */ singleMulterUpload("image"), asyncHandler(async(req, res)=>{
+router.post('/', singleMulterUpload("image"), validateImage, asyncHandler(async(req, res)=>{
     const { title, content, userId } = req.body
     // console.log("fjuwerfhuerheru", req.body)
     const imageUrl = await singlePublicFileUpload(req.file);
@@ -57,7 +54,7 @@ router.post('/', /* validateImage, */ singleMulterUpload("image"), asyncHandler(
     res.json(image)
 }));
 
-router.put('/editimage/:id', /* validateImage, */ asyncHandler(async(req, res) => {
+router.put('/editimage/:id', validateImage, asyncHandler(async(req, res) => {
     // console.log("hell from put route")
     const imageId = req.params.id
     const { title, content, userId } = req.body

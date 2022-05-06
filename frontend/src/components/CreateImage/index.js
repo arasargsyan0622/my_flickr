@@ -18,19 +18,16 @@ function CreateImage(){
         event.preventDefault()
         setErrors([])
         const data = {image, content , userId, title}
-        // const newImage = await dispatch(postImage(data))
-        // .catch(
-        //     async err => {
-        //         const error = await err.json();
-        //         if(error && error.errors) {
-        //             setErrors(error.errors);
-        //         }
-        //     }
-        // )
-        // if(newImage) {
-        history.push("/images")
-        setErrors([])
-        // }
+        const newImage = await dispatch(postImage(data))
+        .catch(
+            async err => {
+                const error = await err.json();
+                if(error && error.errors) {
+                    setErrors(error.errors);
+                }
+            }
+        )
+        if(newImage) history.push("/images")
     }
 
     const selected = event => {
@@ -43,11 +40,11 @@ function CreateImage(){
         <div className='images-page'>
             <div>Add an image</div>
             <form onSubmit ={submit}>
-                {/* <ul>
+                <ul>
                     {errors.map((error, idx) => (
                         <li key={idx}>{error}</li>
                     ))}
-                </ul> */}
+                </ul>
                 <input onChange={selected} type="file" accept="image/*" name="image"></input>
                 <input value={title} onChange={e=> setTitle(e.target.value)} type="text" placeholder='title'></input>
                 <input value={content} onChange={e=> setContent(e.target.value)} type="text" placeholder='content'></input>
