@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getImages }  from"../../store/images";
 
 
+
 const ImageBrowser = ()=>{
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user);
@@ -20,11 +21,12 @@ const ImageBrowser = ()=>{
     }
 
     return (
-        <div>
+        <div className="found-you">
             {images && images.map((image)=>{
+                    console.log("image in index ", image)
                 return(
                     <ImageCard image={image}></ImageCard>
-                    )
+                )
                 })
             }
         </div>

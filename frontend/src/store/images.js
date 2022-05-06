@@ -3,6 +3,7 @@ import rfdc from 'rfdc'
 const clone = rfdc()
 
 const LOAD_IMAGES = 'images/LOAD_IMAGES'
+const LOAD_IMAGE = 'images/LOAD_IMAGE'
 const ADD_IMAGE = 'images/ADD_IMAGE'
 const EDIT_IMAGE = 'images/EDIT_IMAGE'
 const DELETE_IMAGE = 'images/DELETE_IMAGE'
@@ -12,6 +13,13 @@ export const loadImages = images => {
         type: LOAD_IMAGES,
         images
     }
+}
+
+const loadImage = (image) => {
+  return {
+    type: LOAD_IMAGE,
+    image,
+  }
 }
 
 export const addImage = image => {
@@ -42,6 +50,29 @@ export const getImages = () => async dispatch => {
         const images = await response.json()
         dispatch(loadImages(images))
     }
+}
+
+export const getImage = imageId => async dispatch => {
+  const response = await fetch(`/api/images/image/${imageId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+
+  const image = await response.json();
+  dispatch(loadImage(image))
+}
+
+export const getUserImages = (userId) => async(dispatch) => {
+  const response = await fetch(`/api/images/${userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+  const images = await response.json();
+  dispatch(loadImages(images, userId))
 }
 
 export const postImage = (data) => async dispatch =>{
@@ -100,6 +131,8 @@ const imageReducer = (state = initialState, action) => {
                 newState[image.id] = image
             })
         return newState
+        case LOAD_IMAGE:
+            return newState[action.image.id] = action.image
         case ADD_IMAGE:
             newState[action.image.id]=action.image
             return newState

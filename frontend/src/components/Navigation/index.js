@@ -33,7 +33,7 @@ function Navigation({ isLoaded }){
           <NavLink to="/add" className="add-btn">Upload</NavLink>
         </li>
         <li>
-          <NavLink to="/images" className="add-btn">Images</NavLink>
+          <NavLink to="/images" className="add-btn">Explore</NavLink>
         </li>
       </ul>
     </div>
