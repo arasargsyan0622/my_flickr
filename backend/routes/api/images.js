@@ -57,7 +57,7 @@ router.post('/', /* validateImage, */ singleMulterUpload("image"), asyncHandler(
     res.json(image)
 }));
 
-router.put('/editimage/', /* validateImage, */ asyncHandler(async(req, res) => {
+router.put('/editimage/:id', /* validateImage, */ asyncHandler(async(req, res) => {
     // console.log("hell from put route")
     const imageId = req.params.id
     const { title, content, userId } = req.body

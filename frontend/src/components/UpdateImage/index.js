@@ -10,12 +10,13 @@ function UpdateImage(){
     // const user = useSelector(state => state.session.user);
     const [title, setTitle] = useState(image.title)
     const [content, setContent] = useState(image.content)
-    const [ errors, setErrors ] = useState([]);
+    // const [ errors, setErrors ] = useState([]);
+
     const dispatch = useDispatch()
     const history = useHistory()
 
     const submit = async(event)=>{
-        // console.log("is submit wokring ?")
+        console.log("is submit wokring ?")
         event.preventDefault();
         const data = { title, content, imageId }
         await dispatch(imageUpdate(data))
@@ -35,14 +36,14 @@ function UpdateImage(){
     return (
         <div>
             <div>Edit Image</div>
-            <form onSubmit = {submit}>
+            <form onSubmit={submit}>
               {/* <ul>
                 {errors.map((error, idx) => (
                     <li key={idx}>{error}</li>
                 ))}
              </ul> */}
-                <input value={title} onChange={e=> setTitle(e.target.value)} type="text" placeholder='title'></input>
-                <input value={content} onChange={e=> setContent(e.target.value)} type="text" placeholder='content'></input>
+                <input value={title} onChange={e=> setTitle(e.target.value)} placeholder='title'></input>
+                <input value={content} onChange={e=> setContent(e.target.value)} placeholder='content'></input>
                 <button type="submit" >Edit</button>
             </form>
             <Link to={`/images`}><button>Cancel</button></Link>

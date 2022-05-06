@@ -21,14 +21,16 @@ const ImageBrowser = ()=>{
     }
 
     return (
-        <div className="found-you">
-            {images && images.map((image)=>{
-                    console.log("image in index ", image)
-                return(
-                    <ImageCard image={image}></ImageCard>
-                )
-                })
-            }
+        <div className="all-images-container">
+                {images && images.map((image)=>{
+                        // console.log("image in index ", image)
+                    return(
+                        <div className="image-container">
+                            <ImageCard className="single-image" image={image}></ImageCard>
+                        </div>
+                    )
+                    })
+                }
         </div>
     )
 }

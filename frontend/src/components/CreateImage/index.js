@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { postImage } from '../../store/images';
+import "./upload.css";
 
 function CreateImage(){
     const [ image,setImage ] = useState()
@@ -17,7 +18,7 @@ function CreateImage(){
         event.preventDefault()
         setErrors([])
         const data = {image, content , userId, title}
-        const newImage = await dispatch(postImage(data))
+        // const newImage = await dispatch(postImage(data))
         // .catch(
         //     async err => {
         //         const error = await err.json();
@@ -26,10 +27,10 @@ function CreateImage(){
         //         }
         //     }
         // )
-        if(newImage) {
-            history.push("/images")
-            setErrors([])
-        }
+        // if(newImage) {
+        history.push("/images")
+        setErrors([])
+        // }
     }
 
     const selected = event => {
@@ -39,7 +40,7 @@ function CreateImage(){
 
 
     return (
-        <div>
+        <div className='images-page'>
             <div>Add an image</div>
             <form onSubmit ={submit}>
                 {/* <ul>
