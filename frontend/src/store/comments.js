@@ -36,12 +36,14 @@ export const commentDelete = comment => {
 }
 
 export const getComments = (imageId) => async dispatch => {
+    // console.log("Hello from thunk")
     const response = await csrfFetch(`/api/images/image/${imageId}/comments`, {
         method: "GET"
     })
     if(response.ok) {
         const data = await response.json()
         dispatch(loadComments(data))
+        // console.log("this is data", data)
     }
 }
 
@@ -90,7 +92,8 @@ const commentReducer = (state = initialState, action) => {
     const newState = clone(state)
     switch(action.type) {
         case LOAD_COMMENTS:
-            const comments = action.comments
+            const comments = action.comment
+            // console.log("this is comments inside of the reducer", comments)
             comments.comments.forEach(comment => {
                 newState[comment.id] = comment
             })

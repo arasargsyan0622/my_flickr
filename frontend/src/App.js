@@ -8,7 +8,6 @@ import HomePage from "./components/HomePage/HomePage";
 import ImageBrowser from "./components/ShowImages";
 import CreateImage from "./components/CreateImage/index";
 import UpdateImage from "./components/UpdateImage";
-import Slider from "./components/SplashPahe";
 import SingleImagePage from "./components/SingleImage/Image";
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/" exact>
-            <Slider />
+            <HomePage />
           </Route>
           <Route path="/images" exact>
             <ImageBrowser />

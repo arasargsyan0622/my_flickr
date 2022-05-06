@@ -61,16 +61,17 @@ router.delete('/:id', asyncHandler(async(req, res) => {
 }))
 
 
-
+/* comments */
 
 router.get('/image/:id/comments', asyncHandler(async(req, res, next)=>{
+    // console.log("this is inside of the router")
     const imageId = parseInt(req.params.id, 10)
     const comments = await db.Comment.findAll({
         where: {
             imageId,
         }
     });
-
+    // console.log("this is comments", comments)
     res.json({ comments })
 }))
 
@@ -112,7 +113,7 @@ router.delete('/image/:imageId/comment/:commentId/delete', asyncHandler(async(re
     where: {
       imageId
     },
-    include: dbUser
+    include: db.User
   });
 
   return res.json(comments)

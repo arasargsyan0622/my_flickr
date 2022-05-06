@@ -22,6 +22,11 @@ module.exports = {
           title: 'Kepler-22b',
           imageUrl: "1068e845d682d222bed078026bf87025",
           userId: 1,
+        },
+        {
+          title: 'Aurora',
+          imageUrl: "https://spickr.s3.us-west-1.amazonaws.com/1651549488959.jpg",
+          userId: 2,
         }
       ], {});
   },

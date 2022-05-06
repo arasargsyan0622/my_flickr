@@ -1,11 +1,26 @@
 import React from "react"
+import { useSelector } from "react-redux";
+import ImageBrowser from "../ShowImages";
+import SplashPage from "../SplashPage";
+import Slider from "../SplashPahe";
 
-function HomePage() {
+
+const HomePage = () => {
+  const session = useSelector((state) => state.session.user);
+
+  if (!session) {
     return (
-        <div className="home">
-            <h1>Is there anybody in there</h1>
-        </div>
-    )
-}
+      <>
+        <Slider />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <ImageBrowser />
+      </>
+    );
+  }
+};
 
 export default HomePage

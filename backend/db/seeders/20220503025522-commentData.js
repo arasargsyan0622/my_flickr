@@ -16,12 +16,17 @@ module.exports = {
         {
           comment: "That looks great",
           userId: 1,
-          imageId: 3,
+          imageId: 4,
         },
         {
           comment: "I'd love to see it irl",
           userId: 2,
-          imageId: 3,
+          imageId: 4,
+        },
+        {
+          comment: "test test",
+          userId: 1,
+          imageId: 4,
         },
       ], {});
   },
