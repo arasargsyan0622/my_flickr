@@ -2,8 +2,24 @@ const express = require('express')
 const router = express()
 const asyncHandler = require('express-async-handler')
 const { singleMulterUpload, singlePublicFileUpload } = require('../../awsS3')
+const { handleValidationErrors } = require('../../utils/validation');
+const { check } = require('express-validator');
+
 
 const db = require("../../db/models")
+
+// const validateImage = [
+//   check('title')
+//     .exists({ checkFalsy: true })
+//     .withMessage('Please provide a valid title.')
+//     .isLength({ min: 1, max: 100})
+//     .withMessage('Title must be between 1 and 100 characters.'),
+  // check('imageUrl')
+  //   .exists({ checkFalsy: true })
+  //   .withMessage('Please provide a valid image URL.'),
+//   handleValidationErrors
+// ];
+
 
 router.get('/', asyncHandler(async(req, res, next)=>{
     // console.log("why is it in get route?")
@@ -30,7 +46,7 @@ router.get('/image/:id', asyncHandler(async(req, res) => {
   return res.json({ image })
 }))
 
-router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
+router.post('/', /* validateImage, */ singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     const { title, content, userId } = req.body
     // console.log("fjuwerfhuerheru", req.body)
     const imageUrl = await singlePublicFileUpload(req.file);
@@ -41,7 +57,7 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async(req, res)=>{
     res.json(image)
 }));
 
-router.put('/editimage/', asyncHandler(async(req, res) => {
+router.put('/editimage/', /* validateImage, */ asyncHandler(async(req, res) => {
     // console.log("hell from put route")
     const imageId = req.params.id
     const { title, content, userId } = req.body
@@ -63,6 +79,16 @@ router.delete('/:id', asyncHandler(async(req, res) => {
 
 /* comments */
 
+const validateComment = [
+  check('comment')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a valid comment.')
+    .isLength({ min: 1, max: 255 })
+    .withMessage('Comment must be between 1 and 255 characters.'),
+  handleValidationErrors
+]
+
+
 router.get('/image/:id/comments', asyncHandler(async(req, res, next)=>{
     // console.log("this is inside of the router")
     const imageId = parseInt(req.params.id, 10)
@@ -75,15 +101,15 @@ router.get('/image/:id/comments', asyncHandler(async(req, res, next)=>{
     res.json({ comments })
 }))
 
-router.post("/image/:id/comment", asyncHandler(async(req, res) => {
+router.post("/image/:id/comment", validateComment, asyncHandler(async(req, res) => {
   const { userId, imageId, comment } = req.body;
   const newComment = await db.Comment.build({ userId, imageId, comment });
-    await newComment.save();
-    const comments = await db.Comment.findAll({
-      where: { imageId },
-      include: db.User
-    });
-    return res.json(comments);
+  await newComment.save();
+  const comments = await db.Comment.findAll({
+    where: { imageId },
+    include: db.User
+  });
+  return res.json(comments);
 }));
 
 
@@ -104,7 +130,7 @@ router.put('/image/:imageId/comment/:commentId/edit', asyncHandler(async(req, re
 
 router.delete('/image/:imageId/comment/:commentId/delete', asyncHandler(async(req, res) => {
   const imageId = parseInt(req.params.imageId, 10);
-  const commentId = parseInt(req.params.commentId, 10); 
+  const commentId = parseInt(req.params.commentId, 10);
 
   const comment = await db.Comment.findByPk(commentId);
   await comment.destroy();

@@ -10,6 +10,7 @@ function UpdateImage(){
     // const user = useSelector(state => state.session.user);
     const [title, setTitle] = useState(image.title)
     const [content, setContent] = useState(image.content)
+    const [ errors, setErrors ] = useState([]);
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -18,9 +19,15 @@ function UpdateImage(){
         event.preventDefault();
         const data = { title, content, imageId }
         await dispatch(imageUpdate(data))
-        // setTitle("")
-        // setContent("")
-        history.push("/images")
+        // .catch(
+        //     async err => {
+        //     const error = await err.json();
+        //         if(error && error.errors) {
+        //             setErrors(error.errors);
+        //         }
+        //     }
+        //  )
+        history.push('/images')
     }
 
 
@@ -29,6 +36,11 @@ function UpdateImage(){
         <div>
             <div>Edit Image</div>
             <form onSubmit = {submit}>
+              {/* <ul>
+                {errors.map((error, idx) => (
+                    <li key={idx}>{error}</li>
+                ))}
+             </ul> */}
                 <input value={title} onChange={e=> setTitle(e.target.value)} type="text" placeholder='title'></input>
                 <input value={content} onChange={e=> setContent(e.target.value)} type="text" placeholder='content'></input>
                 <button type="submit" >Edit</button>
