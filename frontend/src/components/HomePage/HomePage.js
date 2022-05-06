@@ -12,8 +12,8 @@ const HomePage = () => {
   if (!session) {
     return (
       <>
-        <SplashPage />
-        <Navigation />
+        <Slider />
+        {/* <Navigation /> */}
       </>
     );
   } else {
