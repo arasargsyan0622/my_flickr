@@ -77,6 +77,7 @@ const SingleImagePage = () => {
     return (
       <div className="single-image-container">
         <h1>{myImage?.title}</h1>
+        <p className="image-content">{myImage?.content}</p>
         <img src={myImage?.imageUrl} className="single-image" alt=""></img>
 
         <form onSubmit={postComment}>

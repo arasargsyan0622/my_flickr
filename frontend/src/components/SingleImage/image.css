@@ -1,0 +1,12 @@
+.single-image-container {
+    max-height: fit-content;
+    background-color: rgba(8, 67, 119);
+}
+
+h3 {
+    color: #b3b3b3;
+}
+
+html {
+background-color: rgb(8, 67, 119);
+}

@@ -14,7 +14,7 @@ const HomePage = () => {
   if (!session) {
     return (
       <>
-        {/* <Slider /> */}
+        {/* <SplashPage /> */}
         <Footer />
       </>
     );
