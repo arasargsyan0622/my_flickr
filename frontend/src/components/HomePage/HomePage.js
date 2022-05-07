@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import Footer from "../Footer";
 import ImageBrowser from "../ShowImages";
 import SplashPage from "../SplashPage";
-import Slider from "../SplashPahe";
-
 
 
 const HomePage = () => {
