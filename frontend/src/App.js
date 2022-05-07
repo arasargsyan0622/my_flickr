@@ -9,6 +9,7 @@ import ImageBrowser from "./components/ShowImages";
 import CreateImage from "./components/CreateImage/index";
 import UpdateImage from "./components/UpdateImage";
 import SingleImagePage from "./components/SingleImage/Image";
+import { Helmet } from "react-helmet";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,12 @@ function App() {
 
   return (
     <>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>e-flickr</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+          <meta name="description" content="Title and icon" />
+      </Helmet>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
