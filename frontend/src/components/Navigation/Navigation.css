@@ -21,7 +21,8 @@
 
 .home-btn.active,
 .add-btn,
-.explore-btn {
+.explore-btn,
+.signup-btn {
     color: #ffc107;
     text-decoration: none;
     font-size: 1.5rem;
@@ -62,6 +63,7 @@ li {
 
 .home-btn:hover,
 .add-btn:hover,
-.explore-btn:hover {
+.explore-btn:hover,
+.signup-btn:hover {
     color: #5f1f85;
 }

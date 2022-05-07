@@ -4,10 +4,11 @@
   background-color: rgb(27, 27, 27);
   color: #ffc107;
   font-size: 14px;
+  font-weight: bold;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 99%;
   height: 5%;
 }
 
@@ -19,4 +20,9 @@
 
 .socials-btn:hover {
   cursor: pointer;
+}
+
+.linked-btn {
+  width: auto;
+  height: 25px;
 }

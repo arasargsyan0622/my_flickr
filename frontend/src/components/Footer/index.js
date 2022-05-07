@@ -27,7 +27,7 @@ const Footer = () => {
         href="https://www.linkedin.com/in/ara-sargsyan-9a8a07237"
       >
         <img
-          className="socials-btn"
+          className="linked-btn"
           src="/images/newLinkedin.png"
           alt="linkedin"
         />

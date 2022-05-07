@@ -4,7 +4,12 @@
   background-image: url("https://wallpaperaccess.com/full/6495592.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 89vh;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .form-container {
@@ -13,15 +18,15 @@
   align-items: center;
   justify-content: center;
   padding-left: 1000px;
-  padding-bottom: 250px;
+  /* padding-bottom: 250px; */
 }
 
 .signup-header {
   font-size: 4rem;
   color: rgba(0, 0, 0, 0);
   -webkit-text-stroke: 2px white;
-  height: fit-content;
-  position: absolute
+  position: absolute;
+  top: 100px;
 }
 
 .password-container,
