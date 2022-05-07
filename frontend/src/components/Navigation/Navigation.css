@@ -38,7 +38,8 @@ li {
     list-style: none;
 }
 
-.logout-btn {
+.logout-btn,
+.login-btn {
     background-color: #ffc107;
     color: white;
 }
@@ -51,4 +52,14 @@ li {
 .username,
 .email {
     color: #9a4cc7;
+}
+
+.login-btn {
+    margin-right: 10px
+}
+
+.home-btn:hover,
+.add-btn:hover,
+.explore-btn:hover {
+    color: #5f1f85;
 }

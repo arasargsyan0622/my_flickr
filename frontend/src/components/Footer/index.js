@@ -4,8 +4,6 @@ const Footer = () => {
   const Technologies = [
     "CSS",
     "Express",
-    "HTML",
-    "Node",
     "PostgreSQL",
     "React",
     "Redux",
@@ -17,7 +15,7 @@ const Footer = () => {
       {Technologies.map((ele) => {
         return <div key={ele}>{ele}</div>;
       })}
-      <a class="ara-github" href="https://github.com/arasargsyan0622">
+      <a className="ara-github" href="https://github.com/arasargsyan0622">
         <img
           className="socials-btn"
           src="/images/github.png"
@@ -25,12 +23,12 @@ const Footer = () => {
         />
       </a>
       <a
-        class="ara-linkedin"
+        className="ara-linkedin"
         href="https://www.linkedin.com/in/ara-sargsyan-9a8a07237"
       >
         <img
           className="socials-btn"
-          src="/images/linkedin.png"
+          src="/images/newLinkedin.png"
           alt="linkedin"
         />
       </a>

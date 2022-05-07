@@ -29,10 +29,11 @@ function Navigation({ isLoaded }){
             {isLoaded && sessionLinks}
         </div>
         <div className='nav-add'>
-          <NavLink to="/add" className="add-btn">Upload</NavLink>
+          { sessionUser ? <NavLink to="/add" className="add-btn">Upload</NavLink> : null }
         </div>
         <div className='nav-explore'>
-          <NavLink to="/images" className="add-btn">Explore</NavLink>
+          { sessionUser ? <NavLink to="/images" className="add-btn">Explore</NavLink> : null }
+
         </div>
     </div>
   );

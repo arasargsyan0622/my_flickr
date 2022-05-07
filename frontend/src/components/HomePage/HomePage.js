@@ -15,7 +15,7 @@ const HomePage = () => {
     return (
       <>
         {/* <Slider /> */}
-        {/* <Footer /> */}
+        <Footer />
       </>
     );
   } else {
