@@ -46,8 +46,8 @@ function UpdateImage(){
                 <input className="update-title" value={title} onChange={e=> setTitle(e.target.value)} placeholder='title'></input>
                 <input className="update-content" value={content} onChange={e=> setContent(e.target.value)} placeholder='content'></input>
                 <div className='update-btns-container'>
-                    <button className="update-btn" type="submit"><i class="fas fa-edit"></i></button>
-                    <NavLink to={`/images`}><button className="update-trash"><i class="fa fa-trash"></i></button></NavLink>
+                    <button className="update-btn" type="submit"><i className="fas fa-edit"></i></button>
+                    <NavLink to={`/images`}><button className="update-trash"><i className="fa fa-trash"></i></button></NavLink>
                 </div>
              </form>
         </div>

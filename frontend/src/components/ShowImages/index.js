@@ -26,7 +26,7 @@ const ImageBrowser = ()=>{
                 {reverseImages && images.map((image)=>{
                         // console.log("image in index ", image)
                     return(
-                        <div className="image-container">
+                        <div key={image.id} className="image-container">
                             <ImageCard className="single-image" image={image}></ImageCard>
                         </div>
                     )

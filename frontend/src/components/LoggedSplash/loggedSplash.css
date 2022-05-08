@@ -25,7 +25,7 @@
 
 .css-typing p:nth-child(1) {
   width: 39em;
-  color: #093157cb;
+  color: white;
   -webkit-animation: type 10s steps(40, end);
   animation: type 3.5s steps(40, end);
   -webkit-animation-fill-mode: forwards;
@@ -36,7 +36,7 @@
 .css-typing p:nth-child(2) {
   width: 8em;
   opacity: 0;
-  color: #054e80;
+  color: white;
   -webkit-animation: type2 2s steps(40, end);
   animation: type2 2s steps(40, end);
   -webkit-animation-delay: 2s;
@@ -49,7 +49,7 @@ margin-left:40%
 .css-typing p:nth-child(3) {
   width: 23em;
   opacity: 0;
-  color: #5891c0;
+  color: white;
   -webkit-animation: type3 5s steps(20, end),
     blink 0.5s step-end infinite alternate;
   animation: type3 5s steps(20, end), blink 0.5s step-end infinite alternate;
@@ -63,7 +63,7 @@ margin-left:40%
 .css-typing p:nth-child(4) {
   width: 23em;
   opacity: 0;
-  color: #3e87c7;
+  color: white;
   -webkit-animation: type3 5s steps(20, end),
     blink 0.5s step-end infinite alternate;
   animation: type3 5s steps(20, end), blink 0.5s step-end infinite alternate;

@@ -24,7 +24,11 @@
 
 .image-container {
     /* border: #cb9bba solid 1px; */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
     margin: 25px 25px 25px;
     border-radius: 3rem;
     background-color: rgb(48, 68, 85);
@@ -32,8 +36,9 @@
 }
 
 .single-image {
-    width: 400px;
-    height: 400px;
+
+    width: 300px;
+    height: 300px;
     margin-left: 10px
 }
 
@@ -80,19 +85,4 @@
     margin: 10px;
     text-decoration: none;
     width: 400px
-}
-
-.single-image-top {
-    border-radius: 25px;
-    border: #ddcc93 solid 1px;
-    width: 660px;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    background-color: rgb(48, 68, 85);
-    transition: background-color 0.3s;
-}
-
-.single-image-top:hover {
-    background-color: #1b1624;
-    cursor: pointer;
 }

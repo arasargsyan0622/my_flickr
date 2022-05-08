@@ -88,7 +88,7 @@ const SingleImagePage = () => {
               ))}
           </ul>
           <input className="comment-input" placeholder="Leave a comment" value={newComment} onChange={(e) => setNewComment(e.target.value)}></input>
-          <button className="comment-button" type="submit"><i class="fa-regular fa-comments"></i></button>
+          <button className="comment-button" type="submit"><i className="fa-regular fa-comments"></i></button>
         </form>
 
         {comments && comments.map((comment) => {
@@ -96,7 +96,7 @@ const SingleImagePage = () => {
             <div className="comments-container">
               <h3 className="single-comment">{comment.comment}</h3>
               {comment.userId === user?.id && (
-                <button className="comment-delete-button" onClick={(e) => removeComment(e, comment.id)}><i class="fa fa-trash"></i></button>
+                <button className="comment-delete-button" onClick={(e) => removeComment(e, comment.id)}><i className="fa fa-trash"></i></button>
               )}
             </div>
           )
