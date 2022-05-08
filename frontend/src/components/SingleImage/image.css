@@ -1,12 +1,76 @@
 .single-image-container {
-    max-height: fit-content;
-    background-color: rgba(8, 67, 119);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.comment-errors {
+    color: white;
 }
 
 h3 {
-    color: #b3b3b3;
+    color: #c2a6a6;
 }
 
 html {
-background-color: rgb(8, 67, 119);
+background-color: rgba(23, 51, 75, 0.774);
+}
+
+.comments-container {
+    display: flex;
+    height: 2rem;    /* max-width: 50px; */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.comment-delete-button {
+    height:20px;
+    margin-top: 15px;
+}
+
+.single-comment {
+    margin-right: 0.5rem;
+    border: 2px solid #c2a6a6;
+    border-radius: 5px;
+    margin-bottom:2px;
+    padding: 4px;
+    width: 100%;
+    /* margin: 0.5rem */
+}
+
+.single-image-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(214, 184, 218, 0.842);
+    margin-left: 100px;
+}
+
+.comment-input {
+    width: 60%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: slategray;
+    font-size: 1.5rem;
+}
+
+.comment-button {
+    width: 15%;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+}
+
+.single-image-page {
+    width: 600px;
+    height: 600px
+}
+
+.image-content {
+    margin-left: 100px
 }

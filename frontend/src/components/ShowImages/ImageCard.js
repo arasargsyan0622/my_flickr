@@ -21,10 +21,10 @@ function ImageCard({image}) {
         <>
             <h2 className="image-title">{image.title}</h2>
             <Link to={`/images/${image.id}`}><img src={`${image.imageUrl}`} alt="" className="single-image"></img></Link>
-            
+
             <div className="image-btns">
-                { (user.id === image.userId) ? <Link to={`/editimage/${image.id}`}><button className="edit-btn">Edit</button></Link> : <div></div> }
-                { (user.id === image.userId) ? <button className="delete-btn" onClick={deleteImage}>Delete</button> : <div></div> }
+                { (user.id === image.userId) ? <Link to={`/editimage/${image.id}`}><button className="edit-btn"><i class="fa fa-edit"></i></button></Link> : <div></div> }
+                { (user.id === image.userId) ? <button className="delete-btn" onClick={deleteImage}><i class="fa fa-trash"></i></button> : <div></div> }
             </div>
          </>
     )

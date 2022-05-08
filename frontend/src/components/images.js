@@ -34,5 +34,8 @@ export const images = [
     },
     {
         image: "./images/ztf_bh_merger_webready.original.jpg"
+    },
+    {
+        image: "./images/home.jpg"
     }
 ]

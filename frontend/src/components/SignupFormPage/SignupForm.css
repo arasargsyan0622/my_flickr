@@ -97,3 +97,11 @@
   background-color: rgba(46, 0, 119, 0.747);
   color: white
 }
+
+.fa-house-chimney {
+  color: white
+}
+
+.fa-house-chimney:hover {
+  color: #ffc107
+}

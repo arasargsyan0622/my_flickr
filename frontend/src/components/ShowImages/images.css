@@ -16,7 +16,7 @@
     justify-content: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #b3b3b3;
+    color: rgba(214, 184, 218, 0.842);
     margin: 10px;
     text-decoration: none;
     width: 400px
@@ -24,15 +24,22 @@
 
 .image-container {
     /* border: #cb9bba solid 1px; */
+
     margin: 25px 25px 25px;
     border-radius: 3rem;
-    background-color: rgba(59, 151, 231, 0.432);
+    background-color: rgb(48, 68, 85);
+    transition: background-color 0.3s;
 }
 
 .single-image {
     width: 400px;
     height: 400px;
     margin-left: 10px
+}
+
+.image-container:hover {
+    background-color: #1b1624;
+    cursor: pointer;
 }
 
 .image-btns {
@@ -48,7 +55,7 @@
     height: 2rem;
     border-radius: 1rem;
     background-color: transparent;
-    color: #cb9bba;
+    color: rgba(214, 184, 218, 0.842);
     font-size: 1.5rem;
     margin-top: 0.5rem;
     cursor: pointer;
@@ -56,7 +63,7 @@
 
 .edit-btn:hover,
 .delete-btn:hover {
-    background-color: #5f1f85;
+    background-color: #344aaabb;
 }
 
 .errors {
@@ -73,4 +80,19 @@
     margin: 10px;
     text-decoration: none;
     width: 400px
+}
+
+.single-image-top {
+    border-radius: 25px;
+    border: #ddcc93 solid 1px;
+    width: 660px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    background-color: rgb(48, 68, 85);
+    transition: background-color 0.3s;
+}
+
+.single-image-top:hover {
+    background-color: #1b1624;
+    cursor: pointer;
 }

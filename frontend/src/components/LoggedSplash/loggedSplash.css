@@ -1,0 +1,163 @@
+.css-typing {
+    /* background-image: url('https://watercolorstain.files.wordpress.com/2018/09/astrophysicsforpeopleinahurry.jpg?w=820&h=312&crop=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1; */
+    margin-top: 10%
+}
+
+
+.css-typing p {
+  border-right: 0.15em solid orange;
+  /* font-family: "Courier"; */
+  font-size: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  /* animation: */
+  /* typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite; */
+}
+
+.css-typing p:nth-child(1) {
+  width: 39em;
+  color: #093157cb;
+  -webkit-animation: type 10s steps(40, end);
+  animation: type 3.5s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+    margin-left: 10%;
+}
+
+.css-typing p:nth-child(2) {
+  width: 8em;
+  opacity: 0;
+  color: #054e80;
+  -webkit-animation: type2 2s steps(40, end);
+  animation: type2 2s steps(40, end);
+  -webkit-animation-delay: 2s;
+  animation-delay: 3.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+margin-left:40%
+}
+
+.css-typing p:nth-child(3) {
+  width: 23em;
+  opacity: 0;
+  color: #5891c0;
+  -webkit-animation: type3 5s steps(20, end),
+    blink 0.5s step-end infinite alternate;
+  animation: type3 5s steps(20, end), blink 0.5s step-end infinite alternate;
+  -webkit-animation-delay: 4s;
+  animation-delay: 5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+    margin-left:21%
+}
+
+.css-typing p:nth-child(4) {
+  width: 23em;
+  opacity: 0;
+  color: #3e87c7;
+  -webkit-animation: type3 5s steps(20, end),
+    blink 0.5s step-end infinite alternate;
+  animation: type3 5s steps(20, end), blink 0.5s step-end infinite alternate;
+  -webkit-animation-delay: 4s;
+  animation-delay: 10s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+    margin-left: 65%;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    /* border-right: .15em solid orange; */
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    /* border-right: .15em solid orange; */
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    /* border-right: .15em solid orange; */
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    /* border-right: .15em solid orange; */
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

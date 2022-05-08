@@ -23,7 +23,7 @@
 .add-btn,
 .explore-btn,
 .signup-btn {
-    color: #ffc107;
+    color: white;
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -41,20 +41,20 @@ li {
     list-style: none;
 }
 
-.logout-btn,
-.login-btn {
-    background-color: #ffc107;
+.logout-btn {
+    background-color: transparent;
     color: white;
+    border: none;
 }
 
 .logout-btn:hover {
-    color: #9a4cc7;
+    color: #ffc107;
     font-weight:bold;
 }
 
 .username,
 .email {
-    color: #9a4cc7;
+    color: white;
 }
 
 .login-btn {
@@ -65,5 +65,23 @@ li {
 .add-btn:hover,
 .explore-btn:hover,
 .signup-btn:hover {
-    color: #5f1f85;
+    color: #ffc107;
+}
+
+.fas-container {
+    background-color: transparent;
+    border: none;
+}
+
+.fas-container:hover {
+    color:#ffc107;
+    background-color: transparent;
+}
+
+.fa-user-circle {
+    color: white
+}
+
+.fa-user-circle:hover {
+    color: #ffc107
 }

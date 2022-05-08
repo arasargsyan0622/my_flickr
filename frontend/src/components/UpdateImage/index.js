@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { imageUpdate } from '../../store/images';
+import "./update.css"
 
 function UpdateImage(){
     const { imageId } = useParams()
@@ -34,19 +35,21 @@ function UpdateImage(){
 
 
     return (
-        <div>
-            <div>Edit Image</div>
-            <form onSubmit={submit}>
+        <div className='update-page'>
+            <div className='update-h1'>Edit Your Image</div>
+            <form className='update-page-container' onSubmit={submit}>
               <ul className='errors'>
                 {errors.map((error, idx) => (
                     <li key={idx}>{error}</li>
                 ))}
              </ul>
-                <input value={title} onChange={e=> setTitle(e.target.value)} placeholder='title'></input>
-                <input value={content} onChange={e=> setContent(e.target.value)} placeholder='content'></input>
-                <button type="submit" >Edit</button>
-            </form>
-            <Link to={`/images`}><button>Cancel</button></Link>
+                <input className="update-title" value={title} onChange={e=> setTitle(e.target.value)} placeholder='title'></input>
+                <input className="update-content" value={content} onChange={e=> setContent(e.target.value)} placeholder='content'></input>
+                <div className='update-btns-container'>
+                    <button className="update-btn" type="submit"><i class="fas fa-edit"></i></button>
+                    <NavLink to={`/images`}><button className="update-trash"><i class="fa fa-trash"></i></button></NavLink>
+                </div>
+             </form>
         </div>
     )
 }

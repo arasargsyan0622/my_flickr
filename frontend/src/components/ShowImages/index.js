@@ -9,6 +9,7 @@ const ImageBrowser = ()=>{
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user);
     const images = Object.values(useSelector(state => state.images));
+    const reverseImages = images.reverse()
     // console.log("images in the i ndex", images)
 
     useEffect(() => {
@@ -22,7 +23,7 @@ const ImageBrowser = ()=>{
 
     return (
         <div className="all-images-container">
-                {images && images.map((image)=>{
+                {reverseImages && images.map((image)=>{
                         // console.log("image in index ", image)
                     return(
                         <div className="image-container">

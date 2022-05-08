@@ -25,14 +25,14 @@ function Navigation({ isLoaded }){
   return (
     <div className='btn-container'>
         <div className='nav-home'>
-            <NavLink exact to="/" className="home-btn">Home</NavLink>
+            <NavLink exact to="/" className="home-btn"><i class="fa-solid fa-house-chimney"></i></NavLink>
             {isLoaded && sessionLinks}
         </div>
         <div className='nav-add'>
-          { sessionUser ? <NavLink to="/add" className="add-btn">Upload</NavLink> : null }
+          { sessionUser ? <NavLink to="/add" className="add-btn"><i class="fa-solid fa-cloud-arrow-up"></i></NavLink> : null }
         </div>
         <div className='nav-explore'>
-          { sessionUser ? <NavLink to="/images" className="add-btn">Explore</NavLink> : null }
+          { sessionUser ? <NavLink to="/images" className="add-btn"><i class="fa-brands fa-wpexplorer"></i></NavLink> : null }
 
         </div>
     </div>

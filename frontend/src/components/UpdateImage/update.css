@@ -1,22 +1,11 @@
-.home-btn {
-    margin-right: 10px;
-}
-
-.home-btn
- {
-    color: #ffc107;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-.images-page-container {
+.update-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-.add-h1 {
+.update-h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     display: flex;
@@ -28,11 +17,11 @@
     margin-left: 76px;
 }
 
-.add-title,
-.add-content,
-.add-cancel,
-.add-submit {
-    width: 170px;
+.update-title,
+.update-content,
+.update-cancel,
+.update-submit {
+    width: 50%;
     height: 3rem;
     border-radius: 0.5rem;
     border: none;
@@ -44,9 +33,16 @@
 }
 
 
-.add-title:hover,
-.add-content:hover,
-.add-cancel:hover,
-.add-submit:hover {
+.update-title:hover,
+.update-content:hover,
+.update-cancel:hover,
+.update-submit:hover {
     background-color: #1b1624;
+    color: white
+}
+
+.update-btn,
+.update-trash {
+    height: 100px;
+    width: 100px;
 }

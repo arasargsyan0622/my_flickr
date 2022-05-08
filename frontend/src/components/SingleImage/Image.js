@@ -76,26 +76,27 @@ const SingleImagePage = () => {
 
     return (
       <div className="single-image-container">
-        <h1>{myImage?.title}</h1>
-        <p className="image-content">{myImage?.content}</p>
-        <img src={myImage?.imageUrl} className="single-image" alt=""></img>
-
-        <form onSubmit={postComment}>
-          <ul>
+        <div className="single-image-top">
+          <h1 className="single-image-title">{myImage?.title}</h1>
+          <p className="image-content">{myImage?.content}</p>
+          <img src={myImage?.imageUrl} className="single-image-page" alt=""></img>
+        </div>
+        <form className="comment-form-container" onSubmit={postComment}>
+          <ul className="comment-errors">
               {errors.map((error, idx) => (
                 <li key={idx}>{error}</li>
               ))}
           </ul>
-          <input className="comment-input" value={newComment} onChange={(e) => setNewComment(e.target.value)}></input>
-          <button className="comment-button" type="submit">Comment</button>
+          <input className="comment-input" placeholder="Leave a comment" value={newComment} onChange={(e) => setNewComment(e.target.value)}></input>
+          <button className="comment-button" type="submit"><i class="fa-regular fa-comments"></i></button>
         </form>
 
         {comments && comments.map((comment) => {
           return (
             <div className="comments-container">
-              <h3>{comment.comment}</h3>
+              <h3 className="single-comment">{comment.comment}</h3>
               {comment.userId === user?.id && (
-                <button className="delete-button" onClick={(e) => removeComment(e, comment.id)}>Delete</button>
+                <button className="comment-delete-button" onClick={(e) => removeComment(e, comment.id)}><i class="fa fa-trash"></i></button>
               )}
             </div>
           )

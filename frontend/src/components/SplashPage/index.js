@@ -8,7 +8,7 @@ const SplashPage = () => {
     <>
       <div className="splash-page-container">
         <div className="splash-page-text-container">
-          <h1>Find your inspiration.</h1>
+          <h1>Find your inspiration</h1>
           <button className="splash-btn" onClick={() => history.push("/signup")}>Start for free</button>
         </div>
       </div>

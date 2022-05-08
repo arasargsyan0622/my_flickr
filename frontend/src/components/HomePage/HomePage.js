@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Footer from "../Footer";
 import ImageBrowser from "../ShowImages";
 import SplashPage from "../SplashPage";
-
+import LoggedSplash from "../LoggedSplash";
 
 const HomePage = () => {
   const session = useSelector((state) => state.session.user);
@@ -18,7 +18,8 @@ const HomePage = () => {
   } else {
     return (
       <>
-        <ImageBrowser />
+        <LoggedSplash />
+        {/* <ImageBrowser /> */}
       </>
     );
   }

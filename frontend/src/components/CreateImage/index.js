@@ -38,20 +38,19 @@ function CreateImage(){
 
     return (
         <div className='images-page'>
-            <div>Add an image</div>
-            <form onSubmit ={submit}>
-                <ul>
-                    {errors.map((error, idx) => (
-                        <li key={idx}>{error}</li>
-                    ))}
-                </ul>
-                <input onChange={selected} type="file" accept="image/*" name="image"></input>
-                <input value={title} onChange={e=> setTitle(e.target.value)} type="text" placeholder='title'></input>
-                <input value={content} onChange={e=> setContent(e.target.value)} type="text" placeholder='content'></input>
-
-                <button type="submit">Submit</button>
-            </form>
-            <Link to={`/api/images`}><button>Cancel</button></Link>
+                <h1 className='add-h1'>Add an image</h1>
+                <form className='images-page-container' onSubmit ={submit}>
+                    <ul>
+                        {errors.map((error, idx) => (
+                            <li key={idx}>{error}</li>
+                        ))}
+                    </ul>
+                    <input className="file" onChange={selected} type="file" accept="image/*" name="image"></input>
+                    <input className="add-title" value={title} onChange={e=> setTitle(e.target.value)} type="text" placeholder='title'></input>
+                    <input className="add-content" value={content} onChange={e=> setContent(e.target.value)} type="text" placeholder='content'></input>
+                    <button className="add-submit" type="submit">Submit</button>
+                    <Link to={`/images`}><button className="add-cancel">Cancel</button></Link>
+                </form>
         </div>
     )
 }
