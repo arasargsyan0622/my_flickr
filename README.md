@@ -61,8 +61,8 @@ E-flickr is a space themed clone of Flickr. Logged users can upload images, leav
 
 ### Image page 
 
-![Add Image](readme-images/upload-image.png "a title")
-![Image Description page](readme-images/image-description.png "a title")
+![Add Image](readme-images/upload-page.png "a title")
+![Image Description page](readme-images/image-description-page.png "a title")
 
 ## Future Features
 
