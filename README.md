@@ -47,22 +47,22 @@ E-flickr is a space themed clone of Flickr. Logged users can upload images, leav
 
 ### Login and Sign-up form 
 
-![Login](readme-images/login-page "a title")
-![Sign up](readme-images/signup-page "a title")
+![Login](readme-images/login-page.png "a title")
+![Sign up](readme-images/signup-page.png "a title")
 
 ### Splash page and Home page
 
-![Splash page](readme-images/splash-page "a title")
-![Home page](readme-images/homepage "a title")
+![Splash page](readme-images/splash-page.png "a title")
+![Home page](readme-images/homepage.png "a title")
 
 ### Explore page
 
-![Explore](readme-images/explore-page "a title")
+![Explore](readme-images/explore-page.png "a title")
 
 ### Image page 
 
-![Add Image](readme-images/upload-image "a title")
-![Image Description page](readme-images/image-description "a title")
+![Add Image](readme-images/upload-image.png "a title")
+![Image Description page](readme-images/image-description.png "a title")
 
 ## Future Features
 
