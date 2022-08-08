@@ -14,12 +14,15 @@
  {
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
     color: rgba(214, 184, 218, 0.842);
     margin: 10px;
     text-decoration: none;
-    width: 400px
+    width: 400px;
+    padding: 0 12px 0 12px;
 }
 
 .image-container {
@@ -36,10 +39,8 @@
 }
 
 .single-image {
-
     width: 300px;
     height: 300px;
-    margin-left: 10px
 }
 
 .image-container:hover {
@@ -85,4 +86,12 @@
     margin: 10px;
     text-decoration: none;
     width: 400px
+}
+
+.all-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }

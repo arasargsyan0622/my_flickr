@@ -5,7 +5,7 @@ import { postImage } from '../../store/images';
 import "./upload.css";
 
 function CreateImage(){
-    const [ image,setImage ] = useState()
+    const [ image, setImage ] = useState()
     const [ content, setContent ] = useState("")
     const [ title, setTitle ] = useState("")
     const [ errors, setErrors ] = useState([]);

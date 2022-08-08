@@ -113,7 +113,6 @@ const commentReducer = (state = initialState, action) => {
         default:
             return newState
     }
-
 }
 
 export default commentReducer

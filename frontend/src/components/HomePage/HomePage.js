@@ -1,7 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import Footer from "../Footer";
-import ImageBrowser from "../ShowImages";
 import SplashPage from "../SplashPage";
 import LoggedSplash from "../LoggedSplash";
 
@@ -19,7 +18,6 @@ const HomePage = () => {
     return (
       <>
         <LoggedSplash />
-        {/* <ImageBrowser /> */}
       </>
     );
   }

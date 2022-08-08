@@ -9,3 +9,7 @@
 .login-btn:hover {
     color: #ffc107;
 }
+
+.errors {
+    color:#ffc107
+}

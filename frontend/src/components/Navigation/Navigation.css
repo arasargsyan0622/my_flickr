@@ -85,3 +85,12 @@ li {
 .fa-user-circle:hover {
     color: #ffc107
 }
+
+.add-btn {
+    display: flex;
+}
+
+.explore-text,
+.upload-text {
+    margin-left: 0.5rem;
+}

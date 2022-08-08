@@ -87,20 +87,22 @@ const SingleImagePage = () => {
                 <li key={idx}>{error}</li>
               ))}
           </ul>
-          <input className="comment-input" placeholder="Leave a comment" value={newComment} onChange={(e) => setNewComment(e.target.value)}></input>
-          <button className="comment-button" type="submit"><i className="fa-regular fa-comments"></i></button>
+          <div className="comment-section">
+            <input className="comment-input" placeholder="Leave a comment" value={newComment} onChange={(e) => setNewComment(e.target.value)}></input>
+            <button className="comment-button" type="submit"><i className="fa-regular fa-comments"></i></button>
+            {comments && comments.map((comment) => {
+              return (
+                <div className="comments-container">
+                  <h3 className="single-comment">{comment.comment}</h3>
+                  {comment.userId === user?.id && (
+                    <button className="comment-delete-button" onClick={(e) => removeComment(e, comment.id)}><i className="fa fa-trash"></i></button>
+                  )}
+                </div>
+              )
+            })}
+        </div>
         </form>
 
-        {comments && comments.map((comment) => {
-          return (
-            <div className="comments-container">
-              <h3 className="single-comment">{comment.comment}</h3>
-              {comment.userId === user?.id && (
-                <button className="comment-delete-button" onClick={(e) => removeComment(e, comment.id)}><i className="fa fa-trash"></i></button>
-              )}
-            </div>
-          )
-        })}
 
       </div>
     )

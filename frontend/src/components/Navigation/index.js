@@ -29,11 +29,10 @@ function Navigation({ isLoaded }){
             {isLoaded && sessionLinks}
         </div>
         <div className='nav-add'>
-          { sessionUser ? <NavLink to="/add" className="add-btn"><i className="fa-solid fa-cloud-arrow-up"></i></NavLink> : null }
+          { sessionUser ? <NavLink to="/add" className="add-btn"><i className="fa-solid fa-cloud-arrow-up"></i><div className='upload-text'>Upload</div></NavLink> : null }
         </div>
         <div className='nav-explore'>
-          { sessionUser ? <NavLink to="/images" className="add-btn"><i className="fa-brands fa-wpexplorer"></i></NavLink> : null }
-
+          { sessionUser ? <NavLink to="/images" className="add-btn"><i className="fa-brands fa-wpexplorer"></i><div className='explore-text'>Explore</div></NavLink> : null }
         </div>
     </div>
   );
