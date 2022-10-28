@@ -22,7 +22,7 @@ const SingleImagePage = () => {
   const images = Object.values(useSelector((state) => state.images));
 
   const comments =  Object.values(useSelector((state) => state.comments))
-  console.log("comments", comments)
+  // console.log("comments", comments)
   const myImage = images.filter(image => {return image.id === +imageId})[0]
   // console.log("myImage", myImage)
 
