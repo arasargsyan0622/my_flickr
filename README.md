@@ -71,4 +71,3 @@ E-flickr is a space themed clone of Flickr. Logged users can upload images, leav
 - Implement albums and your images page.
 - Implement user profiles. 
 - Implement Navigation between pictures.
-- Implement search feature to search pictures and users
