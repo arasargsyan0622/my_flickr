@@ -1,6 +1,7 @@
 import "./footer.css";
 
 const Footer = () => {
+
   const Technologies = [
     "CSS",
     "Express",
