@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    height: 85vh;
+    height: fit-content;
     border-radius: 25px;
     border: #ddcc93 solid 1px;
     padding-top: 1rem;
@@ -77,7 +77,7 @@ html {
 
 .single-image-page {
     width: 550px;
-    height: 550px;
+    height: 500px;
     margin-bottom: 12px;
 }
 
